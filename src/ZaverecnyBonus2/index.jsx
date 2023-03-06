@@ -7,9 +7,21 @@ jestli chce opravdu odejít na jinou stránku a tím ztratit rozpracovanou prác
 Pokud otázku nepotvrdí, nechce odejít, zamez přesměrování pomocí `event.preventDefault()`. */
 
 export const ZaverecnyBonus2 = () => {
+
+
 	return (
+
 		<>
-			Odkaz: <a href="https://www.czechitas.cz/">www.czechitas.cz</a>
+			Odkaz: <a
+				href="https://www.czechitas.cz/"
+				onClick={(event) => {
+					if (confirm("Opravdu chcete opustit stranku?")) {
+						alert("Naschledanou")
+					} else {
+						event.preventDefault()
+					}
+				}
+				} > www.czechitas.cz</a>
 			<hr />
 			Formulář:
 			<form>
